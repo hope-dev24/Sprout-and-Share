@@ -102,12 +102,28 @@
             <h2>What Our Guests Say</h2>
             <blockquote>
                 <p>"We came for dinner and stayed for hours. The food tastes like it was picked that morning!"</p>
-                <cite>- Maya and Daniel</cite>
+                <cite>Maya and Daniel</cite>
             </blockquote>
             <blockquote>
                 <p>"Warm, quiet and delicious. The best anniversary dinner we've had."</p>
-                <cite>- Elena and Marcus</cite>
+                <cite>Elena and Marcus</cite>
             </blockquote>
+        </section>
+        <section id="reservations">
+            <h2>Reserve a Table</h2>
+            <form>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+                <label for="guests">Number of Guests:</label>
+                <input type="number" id="guests" name="guests" min="1" max="20" required>
+                <button type="submit">Reserve</button>
+            </form>
         </section>
     </main>
     <script src="script.js"></script>
