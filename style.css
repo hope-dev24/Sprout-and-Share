@@ -94,3 +94,25 @@ nav a {
     margin-bottom: 1rem;
 }
 
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.filter-buttons button {
+    background-color: transparent;
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.filter-buttons button:hover {
+    background-color: var(--color-accent);
+    color: #FFFFFF;
+}
