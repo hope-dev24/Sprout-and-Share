@@ -1,0 +1,8 @@
+:root {
+    --color-primary: #B7E4C7;
+    --color-background: #FFFFFF;
+    --color-accent: crimson;
+    --color-text: #1F3D2B;
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Nunito", sans-serif;
+}
