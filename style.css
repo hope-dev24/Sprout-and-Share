@@ -77,3 +77,20 @@ nav a {
     text-decoration: none;
     font-weight: 700;
 }
+
+.section {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.section {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
