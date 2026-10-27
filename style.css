@@ -23,3 +23,31 @@ body {
 h1, h2, h3 {
     font-family: var(--font-heading);
 }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--color-primary);
+}
+
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 700;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--color-text);
+}
+
