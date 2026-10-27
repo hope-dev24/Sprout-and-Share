@@ -5,6 +5,7 @@
     --color-text: #1F3D2B;
     --font-heading: "Playfair Display", serif;
     --font-body: "Nunito", sans-serif;
+    --color-tint: #EEF8F1;
 }
 
 * {
@@ -51,3 +52,28 @@ nav a {
     color: var(--color-text);
 }
 
+.hero {
+    padding: 6rem 2rem;
+    text-align: center;
+    background-color: var(--color-tint);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: #FFFFFF;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+}
