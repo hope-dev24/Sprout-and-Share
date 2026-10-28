@@ -199,6 +199,42 @@ input:focus {
     outline-offset: 2px;
 }
 
+footer {
+    background-color: var(--color-text);
+    color: #FFFFFF;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+footer h2 {
+    margin-bottom: 1rem;
+}
+
+footer form {
+    margin: 0 auto 2rem;
+}
+
+footer .button {
+    border: 2px solid #FFFFFF;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+footer a {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+footer a:hover {
+    color: var(--color-primary);
+}
+
 @media (min-width: 40rem) {
     .menu-grid {
         grid-template-columns: repeat(2, 1fr);
