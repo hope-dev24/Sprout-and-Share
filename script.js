@@ -13,6 +13,12 @@ const menuItems = document.querySelectorAll("#menu .menu-item");
 filterButtons.forEach(function (button) {
     button.addEventListener("click", function () {
         const filter = button.dataset.filter;
+        filterButtons.forEach(function (btn) {
+            btn.classList.remove("active");
+            btn.setAttribute("aria-pressed", "false");
+        });
+        button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
 
         menuItems.forEach(function (item) {
             if (filter === "all" || item.dataset.category === filter) {

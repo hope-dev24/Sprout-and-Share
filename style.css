@@ -129,11 +129,6 @@ nav.open {
     cursor: pointer;
 }
 
-.filter-buttons button:hover {
-    background-color: var(--color-accent);
-    color: #FFFFFF;
-}
-
 .menu-grid {
     display: grid;
     gap: 1.5rem;
@@ -293,7 +288,10 @@ address {
     cursor: pointer;
 }
 
-
+.filter-buttons button:hover, .filter-buttons button.active {
+    background-color: var(--color-accent);
+    color: #FFFFFF;
+}
 
 @media (min-width: 40rem) {
     .menu-grid {
