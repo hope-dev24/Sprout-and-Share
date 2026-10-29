@@ -29,3 +29,29 @@ filterButtons.forEach(function (button) {
         });
     });
 });
+
+const openStatus = document.querySelector("#open-status");
+
+const hours = {
+    0: { open: 12, close: 21 },
+    1: { open: 11, close: 22 },
+    2: { open: 11, close: 22 },
+    3: { open: 11, close: 22 },
+    4: { open: 11, close: 22 },
+    5: { open: 11, close: 23 },
+    6: { open: 11, close: 23 },
+}
+
+function updateOpenStatus() {
+    const now = new Date();
+    const today = hours[now.getDay()];
+    const currentTime = now.getHours() + now.getMinutes() / 60;
+
+    if (currentTime >= today.open && currentTime < today.close) {
+        openStatus.textContent = "We're open now";
+    } else {
+        openStatus.textContent = "We're closed right now";
+    }
+}
+
+updateOpenStatus();
