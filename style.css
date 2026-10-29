@@ -310,6 +310,7 @@ address {
     }
     nav {
         display: block;
+        width: auto;
     }
     nav ul {
         flex-direction: row;

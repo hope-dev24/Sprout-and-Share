@@ -1,6 +1,6 @@
 console.log("Sprout & share script loaded");
 
-const navToggle = document.querySelector("nav-toggle");
+const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector("#site-nav");
 
 navToggle.addEventListener("click", function () {
