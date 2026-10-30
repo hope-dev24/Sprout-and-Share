@@ -7,6 +7,13 @@ navToggle.addEventListener("click", function () {
     navToggle.setAttribute("aria-expanded", isOpen);
 });
 
+siteNav.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        siteNav.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+    });
+});
+
 const filterButtons = document.querySelectorAll(".filter-buttons button");
 const menuItems = document.querySelectorAll("#menu .menu-item");
 

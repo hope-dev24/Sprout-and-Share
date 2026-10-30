@@ -297,6 +297,11 @@ html {
     scroll-behavior: smooth;
 }
 
+#open-status {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
