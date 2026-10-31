@@ -95,12 +95,17 @@ renderCart();
 
 const reservationForm = document.querySelector("#reservation-form");
 const formMessage = document.querySelector("#form-message");
+let reservations = JSON.parse(localStorage.getItem("reservations")) || [];
+const maxPerSlot = 1;
 
 reservationForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const guestName = document.querySelector("#name").value.trim();
     const date = document.querySelector("#date").value;
+    const time = document.querySelector("#time").value;
+    const email = document.querySelector("#email").value;
+    const guests = Number(document.querySelector("#guests").value);
 
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -115,6 +120,18 @@ reservationForm.addEventListener("submit", function (event) {
         formMessage.textContent = "Please choose a date that is not in the past.";
         return;
     }
+
+    const sameSlot = reservations.filter(function (r) {
+        return r.date === date && r.time === time;
+    });
+    
+    if (sameSlot.length >= maxPerSlot) {
+        formMessage.textContent = "Sorry that time is already booked. Please choose another time.";
+        return;
+    }
+
+    reservations.push({ name: guestName, email: email, date: date, time: time, guests: guests});
+    localStorage.setItem("reservations", JSON.stringify(reservations));
 
     formMessage.textContent = "Thank you! Your table request is received.";
 });
