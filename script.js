@@ -135,3 +135,36 @@ reservationForm.addEventListener("submit", function (event) {
 
     formMessage.textContent = "Thank you! Your table request is received.";
 });
+
+
+const dailySpecial = document.querySelector("#daily-special");
+const adminForm = document.querySelector("#admin-form");
+
+function showSpecial(special) {
+    dailySpecial.querySelector("h3").textContent = special.name;
+    dailySpecial.querySelector("p").textContent = special.description;
+    dailySpecial.querySelector(".price").textContent = "$" + special.price;
+    if (special.tag) {
+        dailySpecial.querySelector("span").textContent = special.tag;
+    }
+}
+
+const savedSpecial = JSON.parse(localStorage.getItem("special"));
+if (savedSpecial) {
+    showSpecial(savedSpecial);
+}
+
+adminForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const special = {
+        name: document.querySelector("#special-name").value.trim(),
+        description: document.querySelector("#special-description").value.trim(),
+        price: Number(document.querySelector("#special-price").value),
+        tag: document.querySelector("#special-tag").value
+    };
+
+    showSpecial(special);
+    localStorage.setItem("special", JSON.stringify(special));
+    adminForm.reset();
+});
