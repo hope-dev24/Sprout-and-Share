@@ -62,3 +62,33 @@ function updateOpenStatus() {
 }
 
 updateOpenStatus();
+
+const addButtons = document.querySelectorAll(".add-to-cart");
+const orderList = document.querySelector("#order-list");
+const  orderTotal = document.querySelector("#order-total");
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function renderCart() {
+    orderList.innerHTML = "";
+    let total = 0;
+    cart.forEach(function (item) {
+        const li = document.createElement("li");
+        li.textContent = item.name + " - $" + item.price;
+        orderList.appendChild(li);
+        total = total + item.price;
+    });
+
+    orderTotal.textContent = total;
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+addButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        const  name = button.dataset.name;
+        const price = Number(button.dataset.price);
+        cart.push({ name: name, price: price });
+        renderCart();
+    });
+});
+
+renderCart();
