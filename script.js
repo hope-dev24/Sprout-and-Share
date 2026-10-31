@@ -92,3 +92,29 @@ addButtons.forEach(function (button) {
 });
 
 renderCart();
+
+const reservationForm = document.querySelector("#reservation-form");
+const formMessage = document.querySelector("#form-message");
+
+reservationForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const guestName = document.querySelector("#name").value.trim();
+    const date = document.querySelector("#date").value;
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const chosenDate = new Date(date + "T00:00:00");
+
+    if (guestName.length < 2) {
+        formMessage.textContent = "Please enter your name.";
+        return;
+    }
+
+    if (chosenDate < today) {
+        formMessage.textContent = "Please choose a date that is not in the past.";
+        return;
+    }
+
+    formMessage.textContent = "Thank you! Your table request is received.";
+});
