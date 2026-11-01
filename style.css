@@ -203,6 +203,17 @@ input:focus, select:focus {
     outline-offset: 2px;
 }
 
+.remove-item {
+    background: none;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    border-radius: 4px;
+    padding: 0.15rem 0.5rem;
+    margin-left: 0.5rem;
+    font-family: var(--font-body);
+    cursor: pointer;
+}
+
 footer {
     background-color: var(--color-text);
     color: #FFFFFF;

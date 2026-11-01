@@ -71,9 +71,17 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 function renderCart() {
     orderList.innerHTML = "";
     let total = 0;
-    cart.forEach(function (item) {
+    cart.forEach(function (item, index) {
         const li = document.createElement("li");
-        li.textContent = item.name + " - $" + item.price;
+        li.textContent = item.name + " - $" + item.price + " ";
+
+        const removeButton = document.createElement("button");
+        removeButton.type = "button";
+        removeButton.textContent = "Remove";
+        removeButton.className = "remove-item";
+        removeButton.dataset.index = index;
+        li.appendChild(removeButton);
+
         orderList.appendChild(li);
         total = total + item.price;
     });
@@ -90,8 +98,12 @@ addButtons.forEach(function (button) {
         renderCart();
     });
 });
-
-renderCart();
+orderList.addEventListener("click", function (event) {
+    if (event.target.classList.contains("remove-item")) {
+        cart.splice(Number(event.target.dataset.index), 1);
+        renderCart();
+    }
+});
 
 const reservationForm = document.querySelector("#reservation-form");
 const formMessage = document.querySelector("#form-message");
@@ -171,4 +183,13 @@ adminForm.addEventListener("submit", function (event) {
     showSpecial(special);
     localStorage.setItem("special", JSON.stringify(special));
     adminForm.reset();
+});
+
+const newsletterForm = document.querySelector("#newsletter-form");
+const  newsletterMessage = document.querySelector("#newsletter-message");
+
+newsletterForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    newsletterMessage.textContent = "Thanks for subscribing!";
+    newsletterForm.reset();
 });
