@@ -4,7 +4,7 @@ Farm-to-table dining for two. A fictional restaurant website built as a portfoli
 
 ## Live site
 
-(Netlify link goes here after we deploy)
+([View the live site](https://eclectic-marzipan-0f5ba1.netlify.app/))
 
 ## Features
 
