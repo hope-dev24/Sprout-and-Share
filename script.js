@@ -113,11 +113,13 @@ reservationForm.addEventListener("submit", function (event) {
 
     if (guestName.length < 2) {
         formMessage.textContent = "Please enter your name.";
+        formMessage.className = "error";
         return;
     }
 
     if (chosenDate < today) {
         formMessage.textContent = "Please choose a date that is not in the past.";
+        formMessage.className = "error";
         return;
     }
 
@@ -127,12 +129,14 @@ reservationForm.addEventListener("submit", function (event) {
     
     if (sameSlot.length >= maxPerSlot) {
         formMessage.textContent = "Sorry that time is already booked. Please choose another time.";
+        formMessage.className = "error";
         return;
     }
 
     reservations.push({ name: guestName, email: email, date: date, time: time, guests: guests});
     localStorage.setItem("reservations", JSON.stringify(reservations));
 
+    formMessage.className = "";
     formMessage.textContent = "Thank you! Your table request is received.";
 });
 
